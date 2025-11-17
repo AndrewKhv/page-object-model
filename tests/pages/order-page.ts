@@ -1,4 +1,5 @@
-import { expect, Locator, Page } from '@playwright/test'
+import { expect, Page } from '@playwright/test'
+import type { Locator } from '@playwright/test'
 
 export class OrderPage {
   readonly page: Page
