@@ -1,4 +1,5 @@
-import { Locator, Page } from '@playwright/test'
+import { Page } from '@playwright/test'
+import type { Locator } from '@playwright/test'
 import { OrderPage } from './order-page'
 import { SERVICE_URL } from '../../config/env-data'
 
@@ -26,6 +27,7 @@ export class LoginPage {
     await this.usernameField.fill(username)
     await this.passwordField.fill(password)
     await this.signInButton.click()
+
     return new OrderPage(this.page)
   }
 
