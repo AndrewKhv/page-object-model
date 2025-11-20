@@ -1,5 +1,4 @@
-import { expect, Page, test } from '@playwright/test'
-import type { Locator } from '@playwright/test'
+import { expect, Page, Locator, test } from '@playwright/test'
 import BasePage from './base-page'
 import { SERVICE_URL } from '../../config/env-data'
 
