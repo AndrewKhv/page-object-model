@@ -28,7 +28,9 @@ export class OrderPage extends BasePage {
     this.createOrderButton = page.getByTestId('createOrder-button')
 
     this.successfulCreationPopup = page.locator('main > .popup')
-    this.okButton = this.successfulCreationPopup.getByTestId('orderSuccessfullyCreated-popup-ok-button')
+    this.okButton = this.successfulCreationPopup.getByTestId(
+      'orderSuccessfullyCreated-popup-ok-button',
+    )
     this.codeSpan = this.successfulCreationPopup.locator('.notification-popup__text').nth(1)
 
     this.searchOrderPopup = page.getByTestId('searchOrder-popup')
@@ -70,6 +72,6 @@ export class OrderPage extends BasePage {
     const text = await this.codeSpan.innerText() // Tracking code: 13223
     const strArray = text.split(' ')
 
-    return Number(strArray[strArray.length-1])
+    return Number(strArray[strArray.length - 1])
   }
 }

@@ -26,11 +26,11 @@ test('TL-17-5 login with correct credentials and verify order creation page', as
 })
 
 test('TL-17-6 login and create order and check order found page', async ({ page }) => {
-  const foundPage = new FoundPage(page);
+  const foundPage = new FoundPage(page)
   const orderInfo = {
     name: 'order',
     phoneField: '789789789',
-    comment: 'comment'
+    comment: 'comment',
   }
 
   const orderCreationPage = await authPage.signIn(USERNAME, PASSWORD)
@@ -41,7 +41,7 @@ test('TL-17-6 login and create order and check order found page', async ({ page 
   await orderCreationPage.createOrderButton.click()
   await page.waitForTimeout(1000)
   await orderCreationPage.checkCreationPopupVisible(true)
-  const orderId = await orderCreationPage.getOrderIdFromPopup();
+  const orderId = await orderCreationPage.getOrderIdFromPopup()
   await orderCreationPage.closeCreationPopup()
   await orderCreationPage.findOrderById(orderId)
   await foundPage.checkElementVisibility(foundPage.orderName)
@@ -52,7 +52,7 @@ test('TL-18-1 Check not found page', async ({ page }) => {
   const orderPage = new OrderPage(page)
 
   await authPage.signIn(USERNAME, PASSWORD)
-  await orderPage.findOrderById(-1);
+  await orderPage.findOrderById(-1)
   await notFoundPage.checkElementVisibility(notFoundPage.title)
   await notFoundPage.checkElementVisibility(notFoundPage.description)
 })

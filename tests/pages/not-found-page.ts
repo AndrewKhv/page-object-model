@@ -7,7 +7,7 @@ export default class NotFoundPage extends BasePage {
   readonly description: Locator
 
   constructor(page: Page, url?: string) {
-    super(page, url ? url : `${SERVICE_URL}/order/-1`);
+    super(page, url ? url : `${SERVICE_URL}/order/-1`)
     this.title = this.page.locator('.not-found__title')
     this.description = this.page.locator('.not-found__description')
   }
