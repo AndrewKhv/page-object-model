@@ -40,18 +40,17 @@ export const test = base.extend<ExtendedTest>({
       data: {
         status: 'OPEN',
         customerName: 'customerName',
-        customerPhone: 'customerPhone',
+        customerPhone: 'customerPhon',
         comment: 'comment',
       },
       headers: {
         Authorization: `Bearer ${auth.jwt}`,
-        'content-type': 'application/json',
+        'Content-Type': 'application/json',
       },
     })
 
     const responseData = await response.json()
     const orderId = responseData.id
-    console.log(orderId, responseData)
-    await use(orderId)
+    await use(String(orderId))
   },
 })
