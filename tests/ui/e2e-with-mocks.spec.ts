@@ -34,11 +34,7 @@ test('TL-22-2 create and find order with mocks', async ({ context }) => {
   const loginPage = new LoginPage(page)
   const orderPage = new OrderPage(page)
   const foundPage = new FoundPage(page)
-  // await loginPage.mockAuth(); <--- disabled because of JWT
   await loginPage.open()
-  // await loginPage.usernameField.fill('test'); <--- disabled because of JWT
-  // await loginPage.passwordField.fill('test1234'); <--- disabled because of JWT
-  // await loginPage.signInButton.click(); <--- disabled because of JWT
 
   await orderPage.nameField.fill(newOrder.customerName)
   await orderPage.phoneField.fill(newOrder.customerPhone)
